@@ -1,0 +1,10 @@
+#Définit l'image utilisé (ubuntu)
+FROM ubuntu:20.04
+#copie les fichiers local vers un conteneur docker
+COPY package*.json ./
+#éxécute les commandes
+RUN npm install
+#indique le port utilisé
+EXPOSE 3000
+#spécifie les arguments pour lancer des commandes par defaut lors du démarrage d'un conteneur
+CMD ["npm","start"]
